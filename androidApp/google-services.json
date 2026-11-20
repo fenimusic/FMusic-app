@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "88947738887",
+    "project_id": "f-music-app",
+    "storage_bucket": "f-music-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88947738887:android:8157b11caf2262e5a61da2",
+        "android_client_info": {
+          "package_name": "com.cyberfeni.fmusic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu-H_9lyL7UAM7e_epe9LpkHGVCjcjUag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88947738887:android:20352c5fa347dda6a61da2",
+        "android_client_info": {
+          "package_name": "com.cyberfeni.fmusic.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu-H_9lyL7UAM7e_epe9LpkHGVCjcjUag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

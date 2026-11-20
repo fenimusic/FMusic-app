@@ -295,6 +295,20 @@
         <meta-data
             android:name="io.sentry.auto-init"
             android:value="false" />
+                <!-- F Music push (FCM) -->
+        <service
+            android:name=".service.fcm.FMusicMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="fmusic_announcements" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/mono" />
 
         <!-- Quick Settings tile: a shortcut to the song recognition sheet (simpmusic://recognize). -->
         <service

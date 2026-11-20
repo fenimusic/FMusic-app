@@ -2844,25 +2844,26 @@ fun SettingScreen(
                         sharedViewModel.checkForUpdate()
                     },
                 )
+                
                 SettingItem(
                     title = stringResource(Res.string.author),
                     subtitle = stringResource(Res.string.maxrave_dev),
                     onClick = {
-                        uriHandler.openUri("https://github.com/maxrave-dev")
+                        uriHandler.openUri("https://github.com/abdulmotalebdev")
                     },
                 )
                 SettingItem(
                     title = stringResource(Res.string.follow_me_on_x),
-                    subtitle = "@maxrave_dev",
+                    subtitle = "Facebook",
                     onClick = {
-                        uriHandler.openUri("https://x.com/maxrave_dev")
+                        uriHandler.openUri("https://www.facebook.com/share/1H9WFXp7gJ/")
                     },
                 )
                 SettingItem(
                     title = stringResource(Res.string.developer_blog),
                     subtitle = stringResource(Res.string.developer_blog_tagline),
                     onClick = {
-                        uriHandler.openUri("https://www.simpmusic.org/blogs")
+                        uriHandler.openUri("https://f-music-app.blogspot.com")
                     },
                 )
                 if (getPlatform() == Platform.Android) {
@@ -2876,8 +2877,10 @@ fun SettingScreen(
                     title = stringResource(Res.string.buy_me_a_coffee),
                     subtitle = stringResource(Res.string.donation),
                     onClick = {
-                        uriHandler.openUri("https://github.com/sponsors/maxrave-dev")
+                        uriHandler.openUri("https://www.supportkori.com/fmusic")
                     },
+                )
+
                 )
                 SettingItem(
                     title = stringResource(Res.string.third_party_libraries),

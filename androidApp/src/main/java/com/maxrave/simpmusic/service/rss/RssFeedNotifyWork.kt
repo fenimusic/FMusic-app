@@ -3,6 +3,7 @@ package com.maxrave.simpmusic.service.rss
 import android.content.Context
 import android.util.Xml
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.text.HtmlCompat
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.maxrave.domain.data.entities.NotificationEntity
@@ -90,7 +91,7 @@ class RssFeedNotifyWork(
                 connectTimeout = 15_000
                 readTimeout = 15_000
                 requestMethod = "GET"
-                setRequestProperty("User-Agent", "SimpMusic")
+                setRequestProperty("User-Agent", "FMusic")
             }
         return try {
             connection.inputStream.bufferedReader().use { it.readText() }
@@ -130,7 +131,7 @@ class RssFeedNotifyWork(
                     if (parser.name == "item") {
                         insideItem = false
                         if (link.isNotEmpty()) {
-                            items.add(RssItem(title, link, description, parsePubMillis(pubDate)))
+                            items.add(RssItem(title, link, plainText(description), parsePubMillis(pubDate)))
                         }
                     }
             }
@@ -152,7 +153,16 @@ class RssFeedNotifyWork(
             .substringBefore('?')
             .trimEnd('/')
             .substringAfterLast('/')
-
+    // Blogger puts the post body in <description> as HTML; show it as plain text.
+    private fun plainText(html: String): String =
+        HtmlCompat
+            .fromHtml(html, HtmlCompat.FROM_HTML_MODE_COMPACT)
+            .toString()
+            .replace('\uFFFC', ' ')
+            .replace(Regex("\\s+"), " ")
+            .trim()
+            .take(300)
+            
     private fun parsePubMillis(pubDate: String): Long =
         try {
             // RFC-822, e.g. "Fri, 26 Jun 2026 19:05:06 GMT"
@@ -170,7 +180,7 @@ class RssFeedNotifyWork(
 
     companion object {
         private const val TAG = "RssFeedNotifyWork"
-        const val FEED_URL = "https://www.simpmusic.org/rss.xml"
+        const val FEED_URL = "https://f-music-app.blogspot.com/feeds/posts/default?alt=rss"
 
         // The only link form the old maxrave.dev feed served: https://maxrave.dev/articles/<slug>.
         private const val LEGACY_POST_URL = "https://maxrave.dev/articles/"

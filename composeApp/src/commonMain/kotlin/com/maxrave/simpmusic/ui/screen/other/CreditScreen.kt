@@ -109,13 +109,15 @@ fun CreditScreen(
         )
 
         // Developer - clickable, opens dev blog
+        
+        // Developer - clickable, opens GitHub profile
         Text(
             text = stringResource(Res.string.maxrave_dev),
             style = typo().bodyMedium,
             textDecoration = TextDecoration.Underline,
             modifier =
                 Modifier.clickable {
-                    openUrl("https://maxrave.dev")
+                    openUrl("https://github.com/abdulmotalebdev")
                 },
         )
 
@@ -152,7 +154,7 @@ fun CreditScreen(
             // Developer blog button
             TextButton(
                 onClick = {
-                    openUrl("https://www.simpmusic.org/blogs")
+                    openUrl("https://f-music-app.blogspot.com")
                 },
                 modifier =
                     Modifier
@@ -172,7 +174,7 @@ fun CreditScreen(
             // GitHub button
             TextButton(
                 onClick = {
-                    openUrl("https://github.com/maxrave-dev/SimpMusic")
+                    openUrl("https://github.com/abdulmotalebdev/FMusic-app")
                 },
                 modifier =
                     Modifier
@@ -186,7 +188,7 @@ fun CreditScreen(
             // Issue tracker button
             TextButton(
                 onClick = {
-                    openUrl("https://github.com/maxrave-dev/SimpMusic/issues")
+                    openUrl("https://github.com/abdulmotalebdev/FMusic-app/issues")
                 },
                 modifier =
                     Modifier
@@ -197,10 +199,10 @@ fun CreditScreen(
                 Text(text = stringResource(Res.string.issue_tracker))
             }
 
-            // Buy me a coffee button
+            // Support F Music button
             TextButton(
                 onClick = {
-                    openUrl("https://github.com/sponsors/maxrave-dev")
+                    openUrl("https://www.supportkori.com/fmusic")
                 },
                 modifier =
                     Modifier
@@ -210,6 +212,8 @@ fun CreditScreen(
             ) {
                 Text(text = stringResource(Res.string.buy_me_a_coffee))
             }
+        }
+
         }
 
         Spacer(modifier = Modifier.height(10.dp))

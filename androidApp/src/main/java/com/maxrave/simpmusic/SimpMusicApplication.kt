@@ -23,6 +23,7 @@ import com.maxrave.domain.manager.DataStoreManager
 import com.maxrave.domain.repository.LibrarySyncPhoneRepository
 import com.maxrave.logger.Logger
 import com.maxrave.simpmusic.di.viewModelModule
+import com.maxrave.simpmusic.service.fcm.FMusicPush
 import com.maxrave.simpmusic.service.backup.AutoBackupScheduler
 import com.maxrave.simpmusic.service.sync.LibrarySyncScheduler
 import com.maxrave.simpmusic.utils.NetworkFirstInterceptor
@@ -120,6 +121,8 @@ class SimpMusicApplication :
         AppContext.apply {
             set(applicationContext)
         }
+                // F Music push (FCM)
+        FMusicPush.init(this)
     }
 
     override fun onTerminate() {

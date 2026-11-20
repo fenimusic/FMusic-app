@@ -1,4 +1,6 @@
 [versions]
+firebase-bom = "35.0.1"
+google-services = "4.5.0"
 # App version
 version-name = "2.6.0"
 version-code = "63"
@@ -100,6 +102,8 @@ zxing = "3.5.4"
 camerax = "1.6.2"
 
 [libraries]
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
+firebase-messaging = { module = "com.google.firebase:firebase-messaging" }
 zxing-core = { module = "com.google.zxing:core", version.ref = "zxing" }
 camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camerax" }
 camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camerax" }
@@ -265,6 +269,7 @@ play-services-cast-framework = { group = "com.google.android.gms", name = "play-
 androidx-mediarouter = { group = "androidx.mediarouter", name = "mediarouter", version.ref = "mediarouter" }
 
 [plugins]
+google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 android-application = { id = "com.android.application", version.ref = "android" }
 android-library = { id = "com.android.library", version.ref = "android" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

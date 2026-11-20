@@ -1,3 +1,4 @@
+
 package com.maxrave.simpmusic.ui.screen.other
 
 import androidx.compose.foundation.Image
@@ -48,7 +49,6 @@ import com.maxrave.simpmusic.expect.ui.DesktopMiniPlayerClearance
 import com.maxrave.simpmusic.expect.ui.VerticalScrollBar
 import com.maxrave.simpmusic.extension.ultraThinBarStyle
 import com.maxrave.simpmusic.ui.component.RippleIconButton
-import com.maxrave.simpmusic.ui.icon.ArrowBackIosNew
 import com.maxrave.simpmusic.ui.icon.SimpIcons
 import com.maxrave.simpmusic.ui.theme.typo
 import com.maxrave.simpmusic.utils.VersionManager
@@ -70,6 +70,7 @@ fun CreditScreen(
 ) {
     val hazeState = rememberHazeState()
     val scrollState = rememberScrollState()
+
     Column(
         modifier =
             Modifier
@@ -82,10 +83,10 @@ fun CreditScreen(
     ) {
         Spacer(modifier = Modifier.height(30.dp))
 
-        // App icon
+        // F Music App Icon
         Image(
             painter = painterResource(Res.drawable.app_icon),
-            contentDescription = "App Icon",
+            contentDescription = "F Music App Icon",
             modifier =
                 Modifier
                     .size(150.dp)
@@ -94,23 +95,24 @@ fun CreditScreen(
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        // App name
+        // App Name
         Text(
             text = stringResource(Res.string.app_name),
             style = typo().titleLarge,
             fontSize = 22.sp,
         )
 
-        // Version
+        // App Version
         Text(
-            text = stringResource(Res.string.version_format, VersionManager.getVersionName()),
+            text = stringResource(
+                Res.string.version_format,
+                VersionManager.getVersionName(),
+            ),
             style = typo().bodySmall,
             fontSize = 13.sp,
         )
 
-        // Developer - clickable, opens dev blog
-        
-        // Developer - clickable, opens GitHub profile
+        // Developer Name - Opens GitHub Profile
         Text(
             text = stringResource(Res.string.maxrave_dev),
             style = typo().bodyMedium,
@@ -123,7 +125,7 @@ fun CreditScreen(
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        // App description
+        // App Description
         Text(
             text = stringResource(Res.string.credit_app),
             style = typo().bodyMedium,
@@ -136,22 +138,11 @@ fun CreditScreen(
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides Dp.Unspecified) {
-            // Website button
-            TextButton(
-                onClick = {
-                    openUrl("https://simpmusic.org")
-                },
-                modifier =
-                    Modifier
-                        .align(Alignment.Start)
-                        .padding(horizontal = 25.dp)
-                        .defaultMinSize(minHeight = 1.dp, minWidth = 1.dp),
-            ) {
-                Text(text = stringResource(Res.string.website))
-            }
+        CompositionLocalProvider(
+            LocalMinimumInteractiveComponentSize provides Dp.Unspecified
+        ) {
 
-            // Developer blog button
+            // F Music Website
             TextButton(
                 onClick = {
                     openUrl("https://f-music-app.blogspot.com")
@@ -160,69 +151,117 @@ fun CreditScreen(
                     Modifier
                         .align(Alignment.Start)
                         .padding(horizontal = 25.dp)
-                        .defaultMinSize(minHeight = 1.dp, minWidth = 1.dp),
+                        .defaultMinSize(
+                            minHeight = 1.dp,
+                            minWidth = 1.dp,
+                        ),
+            ) {
+                Text(
+                    text = stringResource(Res.string.website)
+                )
+            }
+
+            // F Music Developer Blog
+            TextButton(
+                onClick = {
+                    openUrl("https://f-music-app.blogspot.com")
+                },
+                modifier =
+                    Modifier
+                        .align(Alignment.Start)
+                        .padding(horizontal = 25.dp)
+                        .defaultMinSize(
+                            minHeight = 1.dp,
+                            minWidth = 1.dp,
+                        ),
             ) {
                 Column {
-                    Text(text = stringResource(Res.string.developer_blog))
                     Text(
-                        text = stringResource(Res.string.developer_blog_tagline),
+                        text = stringResource(Res.string.developer_blog)
+                    )
+
+                    Text(
+                        text = stringResource(
+                            Res.string.developer_blog_tagline
+                        ),
                         style = typo().bodySmall,
                     )
                 }
             }
 
-            // GitHub button
+            // F Music GitHub Repository
             TextButton(
                 onClick = {
-                    openUrl("https://github.com/abdulmotalebdev/FMusic-app")
+                    openUrl(
+                        "https://github.com/abdulmotalebdev/FMusic-app"
+                    )
                 },
                 modifier =
                     Modifier
                         .align(Alignment.Start)
                         .padding(horizontal = 25.dp)
-                        .defaultMinSize(minHeight = 1.dp, minWidth = 1.dp),
+                        .defaultMinSize(
+                            minHeight = 1.dp,
+                            minWidth = 1.dp,
+                        ),
             ) {
-                Text(text = stringResource(Res.string.github))
+                Text(
+                    text = stringResource(Res.string.github)
+                )
             }
 
-            // Issue tracker button
+            // F Music Issue Tracker
             TextButton(
                 onClick = {
-                    openUrl("https://github.com/abdulmotalebdev/FMusic-app/issues")
+                    openUrl(
+                        "https://github.com/abdulmotalebdev/FMusic-app/issues"
+                    )
                 },
                 modifier =
                     Modifier
                         .align(Alignment.Start)
                         .padding(horizontal = 25.dp)
-                        .defaultMinSize(minHeight = 1.dp, minWidth = 1.dp),
+                        .defaultMinSize(
+                            minHeight = 1.dp,
+                            minWidth = 1.dp,
+                        ),
             ) {
-                Text(text = stringResource(Res.string.issue_tracker))
+                Text(
+                    text = stringResource(Res.string.issue_tracker)
+                )
             }
 
-            // Support F Music button
+            // Support F Music
             TextButton(
                 onClick = {
-                    openUrl("https://www.supportkori.com/fmusic")
+                    openUrl(
+                        "https://www.supportkori.com/fmusic"
+                    )
                 },
                 modifier =
                     Modifier
                         .align(Alignment.Start)
                         .padding(horizontal = 25.dp)
-                        .defaultMinSize(minHeight = 1.dp, minWidth = 1.dp),
+                        .defaultMinSize(
+                            minHeight = 1.dp,
+                            minWidth = 1.dp,
+                        ),
             ) {
-                Text(text = stringResource(Res.string.buy_me_a_coffee))
+                Text(
+                    text = stringResource(Res.string.buy_me_a_coffee)
+                )
             }
-        }
-
         }
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        // README's "Legal Disclaimer & Terms of Use", bundled as files/legal_disclaimer.md: a copy,
-        // so the two are updated together.
+        // Legal Disclaimer & Terms of Use
         val legalDisclaimer by produceState<String?>(null) {
-            value = Res.readBytes("files/legal_disclaimer.md").decodeToString()
+            value =
+                Res.readBytes("files/legal_disclaimer.md")
+                    .decodeToString()
         }
+
         legalDisclaimer?.let {
             Markdown(
                 it,
@@ -233,37 +272,60 @@ fun CreditScreen(
                         text = typo().bodyMedium,
                         paragraph = typo().bodyMedium,
                         bullet = typo().bodyMedium,
-                        textLink = TextLinkStyles(SpanStyle(textDecoration = TextDecoration.Underline)),
+                        textLink = TextLinkStyles(
+                            SpanStyle(
+                                textDecoration = TextDecoration.Underline
+                            )
+                        ),
                     ),
                 modifier =
                     Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 25.dp, vertical = 10.dp),
+                        .padding(
+                            horizontal = 25.dp,
+                            vertical = 10.dp,
+                        ),
             )
         }
 
-        // Copyright text
+        // Copyright Text
         Text(
-            text = stringResource(Res.string.copyright, now().year.toString()),
+            text = stringResource(
+                Res.string.copyright,
+                now().year.toString(),
+            ),
             style = typo().bodySmall,
             modifier =
                 Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 25.dp, vertical = 5.dp),
+                    .padding(
+                        horizontal = 25.dp,
+                        vertical = 5.dp,
+                    ),
             textAlign = TextAlign.Start,
         )
 
-        // Bottom spacing
+        // Bottom Spacing
         Spacer(modifier = Modifier.height(200.dp))
     }
+
+    // Vertical Scrollbar
     VerticalScrollBar(
         scrollState = scrollState,
-        modifier = Modifier.padding(top = paddingValues.calculateTopPadding() + 64.dp, bottom = DesktopMiniPlayerClearance),
+        modifier =
+            Modifier.padding(
+                top = paddingValues.calculateTopPadding() + 64.dp,
+                bottom = DesktopMiniPlayerClearance,
+            ),
     )
+
+    // Top App Bar
     TopAppBar(
         modifier =
-            Modifier
-                .hazeBlur(HazeInput.Sources(hazeState), ultraThinBarStyle()),
+            Modifier.hazeBlur(
+                HazeInput.Sources(hazeState),
+                ultraThinBarStyle(),
+            ),
         title = {
             Text(
                 text = stringResource(Res.string.app_name),
@@ -274,18 +336,21 @@ fun CreditScreen(
                         .fillMaxWidth()
                         .wrapContentHeight(
                             align = Alignment.CenterVertically,
-                        ).basicMarquee(
+                        )
+                        .basicMarquee(
                             iterations = Int.MAX_VALUE,
                             animationMode = MarqueeAnimationMode.Immediately,
-                        ).focusable(),
+                        )
+                        .focusable(),
             )
         },
         navigationIcon = {
-            Box(Modifier.padding(horizontal = 5.dp)) {
+            Box(
+                Modifier.padding(horizontal = 5.dp)
+            ) {
                 RippleIconButton(
                     SimpIcons.ArrowBackIosNew,
-                    Modifier
-                        .size(32.dp),
+                    Modifier.size(32.dp),
                     true,
                     tint = MaterialTheme.colorScheme.onSurface,
                 ) {

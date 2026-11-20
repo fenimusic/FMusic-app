@@ -2880,8 +2880,6 @@ fun SettingScreen(
                         uriHandler.openUri("https://www.supportkori.com/fmusic")
                     },
                 )
-
-                )
                 SettingItem(
                     title = stringResource(Res.string.third_party_libraries),
                     subtitle = stringResource(Res.string.description_and_licenses),

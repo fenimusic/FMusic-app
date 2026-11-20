@@ -11,6 +11,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.sentry.gradle)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -20,7 +21,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.maxrave.simpmusic"
+        applicationId = "com.cyberfeni.fmusic"
         minSdk = 26
         targetSdk = 36
         versionCode =
@@ -179,6 +180,9 @@ dependencies {
 
     implementation(projects.composeApp)
     implementation(projects.data)
+    // Firebase Cloud Messaging (push)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.messaging)
 
     if (isFullBuild) {
         implementation(projects.crashlytics)

@@ -111,18 +111,6 @@ fun CreditScreen(
             style = typo().bodySmall,
             fontSize = 13.sp,
         )
-
-        // Developer Name - Opens GitHub Profile
-        Text(
-            text = stringResource(Res.string.maxrave_dev),
-            style = typo().bodyMedium,
-            textDecoration = TextDecoration.Underline,
-            modifier =
-                Modifier.clickable {
-                    openUrl("https://github.com/abdulmotalebdev")
-                },
-        )
-
         Spacer(modifier = Modifier.height(20.dp))
 
         // App Description

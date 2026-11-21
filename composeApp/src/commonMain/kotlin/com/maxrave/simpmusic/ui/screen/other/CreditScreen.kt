@@ -1,4 +1,3 @@
-
 package com.maxrave.simpmusic.ui.screen.other
 
 import androidx.compose.foundation.Image
@@ -49,6 +48,7 @@ import com.maxrave.simpmusic.expect.ui.DesktopMiniPlayerClearance
 import com.maxrave.simpmusic.expect.ui.VerticalScrollBar
 import com.maxrave.simpmusic.extension.ultraThinBarStyle
 import com.maxrave.simpmusic.ui.component.RippleIconButton
+import com.maxrave.simpmusic.ui.icon.ArrowBackIosNew
 import com.maxrave.simpmusic.ui.icon.SimpIcons
 import com.maxrave.simpmusic.ui.theme.typo
 import com.maxrave.simpmusic.utils.VersionManager
@@ -181,7 +181,7 @@ fun CreditScreen(
             TextButton(
                 onClick = {
                     openUrl(
-                        "https://github.com/abdulmotalebdev/FMusic-app"
+                        "https://github.com/fenimusic/FMusic-app"
                     )
                 },
                 modifier =
@@ -202,7 +202,7 @@ fun CreditScreen(
             TextButton(
                 onClick = {
                     openUrl(
-                        "https://github.com/abdulmotalebdev/FMusic-app/issues"
+                        "https://github.com/fenimusic/FMusic-app/issues"
                     )
                 },
                 modifier =
